@@ -1,0 +1,19 @@
+<div class="container">
+<h1>Games for rental</h1>
+  <div class="games-container">
+    <% @games.each do |game| %>
+    <div class="game-card">
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+      <div class="game-card-infos">
+        <div>
+          <h2><%= game.name %></h2>
+          <p><%= game.description %></p>
+        </div>
+        <h2 class="game-card-pricing"><%= game.price_per_day %>€</h2>
+        <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="game-card-user avatar-bordered" />
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
+
