@@ -6,8 +6,11 @@
     <div>
       <ul>
         <li>Nombre de joueurs : <%= @game.number_players %></li>
+        <br>
         <li>Âge minimum : <%= @game.age_limit %> ans</li>
+        <br>
         <li>Durée moyenne d'une partie : <%= @game.duration %> minutes</li>
+        <br>
         <li>Description : <%= @game.description %></li>
       </ul>
     </div>
@@ -32,7 +35,7 @@
       </div>
     </div>
     <div>
-      <%= link_to "Louer", "#", class: "btn btn-gradient mt-3" %>
+      <%= link_to "Louer", new_rental_path, class: "btn btn-gradient mt-3" %>
     </div>
   </div>
 </div>

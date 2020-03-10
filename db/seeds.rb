@@ -5,10 +5,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-User.destroy_all
-User.create!({first_name: "Kevin", last_name: "Raynaud", email: "myemal@ddedede.com", password: "ilikenobes"})
 
 Game.destroy_all
+
+User.destroy_all
+
+
+user = User.create!({first_name: "Kevin", last_name: "Raynaud", email: "myemal@ddedede.com", password: "ilikenobes"})
 
 Game.create!([{
   name: "Ant-Man",
@@ -17,7 +20,7 @@ Game.create!([{
   number_players: 4,
   duration: 30,
   age_limit: 10,
-  user_id: 1
+  user_id: user.id
 },
 {
   name: "Pixels",
@@ -26,7 +29,7 @@ Game.create!([{
   number_players: 8,
   duration: 45,
   age_limit: 15,
-  user_id: 1
+  user_id: user.id
 },
 {
   name: "Terminator Genisys",
@@ -35,7 +38,7 @@ Game.create!([{
   number_players: 2,
   duration: 15,
   age_limit: 5,
-  user_id: 1
+  user_id: user.id
 }])
 
 puts "3 games created"
