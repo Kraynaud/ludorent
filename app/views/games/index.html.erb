@@ -6,7 +6,7 @@
       <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
       <div class="game-card-infos">
         <div>
-          <h2><%= game.name %></h2>
+          <h2><%= link_to game.name, game_path(game) %></h2>
           <p><%= game.description %></p>
         </div>
         <h2 class="game-card-pricing"><%= game.price_per_day %>€</h2>
