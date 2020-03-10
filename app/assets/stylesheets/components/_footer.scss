@@ -4,8 +4,16 @@
   align-items: center;
   justify-content: space-between;
   height: 100px;
-  padding: 0px 50px;
+  padding: 0px 0px;
   color: rgba(0,0,0,0.3);
+  background-color: white;
+  box-shadow: 0 0 0 2px lightgrey;
+  margin: auto;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+
 }
 .footer-links {
   display: flex;
@@ -22,5 +30,5 @@
   opacity: 1;
 }
 .footer .fa-heart {
-  color: #D23333;
+  color: lightgrey;
 }
