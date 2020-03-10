@@ -13,19 +13,28 @@ Game.destroy_all
 Game.create!([{
   name: "Ant-Man",
   description: "Armed with the astonishing ability to shrink in scale",
-  price_per_day: 26,
+  price_per_day: 5,
+  number_players: 4,
+  duration: 30,
+  age_limit: 10,
   user_id: 1
 },
 {
   name: "Pixels",
   description: "Armed with the astonishing ability to shrink in scale",
-  price_per_day: 26,
+  price_per_day: 10,
+  number_players: 8,
+  duration: 45,
+  age_limit: 15,
   user_id: 1
 },
 {
   name: "Terminator Genisys",
   description: "Armed with the astonishing ability to shrink in scale",
-  price_per_day: 26,
+  price_per_day: 7,
+  number_players: 2,
+  duration: 15,
+  age_limit: 5,
   user_id: 1
 }])
 
