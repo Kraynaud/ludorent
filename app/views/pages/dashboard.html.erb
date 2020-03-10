@@ -1,0 +1,58 @@
+<div class="container">
+  <div class="dashboard">
+    <h1>Tableau de bord</h1>
+
+    <div class="user-infos">
+
+    <img src="https://kitt.lewagon.com/placeholder/users/Kraynaud" class="avatar">
+      <div class="infos-left">
+        <small>14th January</small>
+        <p>Matti started to follow you.</p>
+      </div>
+      <div class="notification-actions">
+        <p><a href="#">Edit <i class="fas fa-pencil-alt"></i></a><a href="#">Delete <i class="far fa-trash-alt"></i></p>
+      </div>
+
+    </div>
+
+    <div class="games-infos">
+
+      <ul class="nav nav-pills mb-3" id="dashboard-tab" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link active" id="games-tab" data-toggle="pill" href="#games" role="tab" aria-controls="games" aria-selected="true">Games</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="rentals-tab" data-toggle="pill" href="#rentals" role="tab" aria-controls="rentals" aria-selected="false">Rentals</a>
+        </li>
+      </ul>
+
+      <div class="tab-content" id="dashboard-tabContent">
+
+        <div class="tab-pane fade show active" id="games" role="tabpanel" aria-labelledby="games-tab">
+          <% @my_games.each do |game| %>
+          <div class="dashboard-game-card">
+            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+            <div class="game-card-infos">
+              <h2><%= game.name %></h2>
+              <p><%= game.description %></p>
+              <p><%= game.price_per_day %></p>
+            </div>
+            <div class="notification-actions">
+              <a href="#">Edit <i class="fas fa-pencil-alt"></i></a>
+              <a href="#">Delete <i class="far fa-trash-alt"></i></a>
+            </div>
+          </div>
+          <% end %>
+          <%= link_to 'Create new game +', to: 'games#new' %>
+        </div>
+
+        <div class="tab-pane fade" id="rentals" role="tabpanel" aria-labelledby="rentals-tab">
+
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
