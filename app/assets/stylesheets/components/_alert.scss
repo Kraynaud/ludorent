@@ -1,9 +1,9 @@
-// .alert {
-//   position: fixed;
-//   bottom: 16px;
-//   right: 16px;
-//   z-index: 1000;
-// }
+.alert {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  z-index: 1000;
+}
 
 .alert {
   padding: 16px 24px;
@@ -23,7 +23,7 @@
 .alert-warning {
   border: 2px solid #FFC65A;
 }
-.flash {
+.alert {
   padding: 16px 24px;
   display: flex;
   justify-content: space-between;
@@ -34,10 +34,10 @@
   margin: 8px;
 }
 
-.flash-success {
+.alert-success {
   border: 2px solid #1EDD88;
 }
 
-.flash-warning {
+.alert-warning {
   border: 2px solid #FFC65A;
 }
