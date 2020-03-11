@@ -3,14 +3,14 @@
     <h1>Tableau de bord</h1>
 
     <div class="user-infos">
-
-    <img src="https://kitt.lewagon.com/placeholder/users/Kraynaud" class="avatar">
+    <img src="https://kitt.lewagon.com/placeholder/users/Kraynaud" class="gradient" >
       <div class="infos-left">
-        <small>14th January</small>
-        <p>Matti started to follow you.</p>
+        <h2><%= @user.first_name %> <%= @user.last_name %></h2>
+        <p>Games : <%= @my_games.length %></p>
+        <p>Rentals : <%= @my_rentals.length %></p>
       </div>
-      <div class="notification-actions">
-        <p><a href="#">Edit <i class="fas fa-pencil-alt"></i></a><a href="#">Delete <i class="far fa-trash-alt"></i></p>
+      <div class="actions">
+        <%= link_to 'Edit account', edit_user_registration_path(@user) %> <i class="fas fa-pencil-alt"></i>
       </div>
 
     </div>
@@ -29,21 +29,23 @@
       <div class="tab-content" id="dashboard-tabContent">
 
         <div class="tab-pane fade show active" id="games" role="tabpanel" aria-labelledby="games-tab">
+
           <% @my_games.each do |game| %>
+
           <div class="dashboard-game-card">
-            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+            <%= cl_image_tag game.photo.key, height: 300, width: 400, crop: :fill %>
             <div class="game-card-infos">
-              <h2><%= game.name %></h2>
+              <h2><%= link_to game.name, game_path(game) %></h2>
               <p><%= game.description %></p>
-              <p><%= game.price_per_day %></p>
+              <p><%= game.price_per_day %> €/day</p>
             </div>
-            <div class="notification-actions">
-              <a href="#">Edit <i class="fas fa-pencil-alt"></i></a>
-              <a href="#">Delete <i class="far fa-trash-alt"></i></a>
+            <div class="actions">
+              <%= link_to 'Edit game', edit_game_path(game) %> <i class="fas fa-pencil-alt"></i>
+              <%= link_to 'Delete game', game_path(game), method: :delete, data: { confirm: "Are you sure ?"} %> <i class="far fa-trash-alt"></i>
             </div>
           </div>
           <% end %>
-          <%= link_to 'Create new game +', to: 'games#new' %>
+          <%= link_to 'Create new game +', new_game_path %>
         </div>
 
         <div class="tab-pane fade" id="rentals" role="tabpanel" aria-labelledby="rentals-tab">

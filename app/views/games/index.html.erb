@@ -3,7 +3,7 @@
   <div class="games-container">
     <% @games.each do |game| %>
     <div class="game-card">
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+      <%= cl_image_tag game.photo.key, height: 300, width: 400, crop: :fill %>
       <div class="game-card-infos">
         <div>
           <h2><%= link_to game.name, game_path(game), {:style=>'color:#EF629F;', :class => "css_class"} %></h2>
