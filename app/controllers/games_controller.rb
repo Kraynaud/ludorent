@@ -16,19 +16,31 @@ class GamesController < ApplicationController
     @game = Game.new(game_params)
     @game.user = current_user
     if @game.save
-      redirect_to games_path
+      redirect_to dashboard_path
     else
       render :new
     end
   end
 
+  def edit
+    @game = Game.find(params[:id])
+  end
+
+  def update
+    @game = Game.find(params[:id])
+    @game.update(game_params)
+
+    redirect_to dashboard_path
+  end
+
   def destroy
     Game.find(params[:id]).delete
+    redirect_to dashboard_path
   end
 
   private
 
   def game_params
-    params.require(:game).permit(:name, :description, :age_limit, :duration, :duration, :number_players, :price_per_day, :photo)
+    params.require(:game).permit(:name, :description, :address, :age_limit, :duration, :duration, :number_players, :price_per_day, :photo)
   end
 end
