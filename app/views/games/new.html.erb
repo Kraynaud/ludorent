@@ -1,15 +1,6 @@
 <div class="container">
 <h1>Create your add</h1>
-  <div class="new_game_form">
-    <%= simple_form_for (@game) do |f| %>
-      <%= f.input :name %>
-      <%= f.input :description %>
-      <%= f.input :age_limit, :collection => ["Tout public", "7 ans +", "10 ans +", "18 ans +"]%>
-      <%= f.input :duration, :collection => ["30 minutes", "Une heure", "Jusqu'à 2 heures", "Plus de 2 heures"]%>
-      <%= f.input :number_players %>
-      <%= f.input :price_per_day %>
-      <%= f.input :photo, as: :file %>
-      <%= f.submit "Submit your add", class: "btn btn-primary" %>
-    <% end %>
-  </div>
+
+<%= render 'form', game: @game %>
+
 </div>
