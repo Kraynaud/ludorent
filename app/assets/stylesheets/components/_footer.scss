@@ -10,11 +10,10 @@
   box-shadow: 0 0 0 2px lightgrey;
   margin: auto;
   text-align: center;
-  position: fixed;
+  // position: fixed;
   bottom: 0;
   width: 100%;
   font-family: 'Ubuntu', sans-serif;
-
 }
 .footer-links {
   display: flex;
@@ -33,4 +32,3 @@
 .footer .fa-heart {
   color: white;
 }
-
