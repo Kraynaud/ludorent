@@ -3,7 +3,6 @@
     <h1>Tableau de bord</h1>
 
     <div class="user-infos">
-
     <img src="https://kitt.lewagon.com/placeholder/users/Kraynaud" class="gradient" >
       <div class="infos-left">
         <h2><%= @user.first_name %> <%= @user.last_name %></h2>
@@ -11,7 +10,7 @@
         <p>Rentals : <%= @my_rentals.length %></p>
       </div>
       <div class="actions">
-        <p><a href="#">Edit account <i class="fas fa-pencil-alt"></i></a><a href="#">Delete account <i class="far fa-trash-alt"></i></p>
+        <%= link_to 'Edit account', edit_user_registration_path(@user) %> <i class="fas fa-pencil-alt"></i>
       </div>
 
     </div>
@@ -34,9 +33,9 @@
           <% @my_games.each do |game| %>
 
           <div class="dashboard-game-card">
-            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+            <%= cl_image_tag game.photo.key, height: 300, width: 400, crop: :fill %>
             <div class="game-card-infos">
-              <h2><%= game.name %></h2>
+              <h2><%= link_to game.name, game_path(game) %></h2>
               <p><%= game.description %></p>
               <p><%= game.price_per_day %> €/day</p>
             </div>

@@ -1,7 +1,7 @@
 <div class="container">
   <div class="d-flex justify-content-around border mt-3 p-3 mb-3 bg-white">
     <div>
-      <%= image_tag "uno.jpeg", alt: "Le Wagon", width: 200 %>
+      <%= cl_image_tag @game.photo.key, height: 300, width: 400, crop: :fill %>
     </div>
     <div>
       <ul>
