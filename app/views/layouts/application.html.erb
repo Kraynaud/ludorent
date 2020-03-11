@@ -10,15 +10,16 @@
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
-   <!--  <p class="notice"><%= notice %></p> -->
-    <p class="alert"><%= alert %></p>
+  <!--  <p class="notice"><%= notice %></p> -->
+      <p class="alert"><%= alert %></p>
 
-    <%= render './devise/shared/navbar' %>
+      <%= render './devise/shared/navbar' %>
 
-    <%= yield %>
+     <div class="page"><%= yield %></div>
 
-  <%= render './devise/shared/footer' %>
+      <%= render './devise/shared/flashes' %>
 
+      <%= render './devise/shared/footer' %>
 
     <%= javascript_include_tag 'application' %>
 
