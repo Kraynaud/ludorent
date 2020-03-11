@@ -12,9 +12,7 @@
       <% if user_signed_in? %>
         <li class="nav-item " >
           <%= link_to "Games", games_path, class: "btn btn-nav mr-3" %>
-        </li>
-          <%= link_to "Messages", "#", class: "btn btn-nav mr-3" %>
-        </li>
+
         <li class="nav-item dropdown align-self-center">
           <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
