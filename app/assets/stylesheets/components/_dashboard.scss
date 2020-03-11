@@ -12,6 +12,7 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
+  margin-bottom: 20px;
 }
 
 .dashboard-game-card img {
@@ -36,5 +37,64 @@
 
 .dashboard-game-card .game-card-infos {
   padding: 16px;
+}
+
+.user-infos {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+  background: white;
+  padding: 8px 16px;
+  border: 1px solid rgb(235,235,235);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+
+  img{
+    width: auto;
+    height: 150px;
+  }
+}
+
+.gradient{
+  border: 1px solid;
+  border-image: linear-gradient(#EECDA3, #EF629F) 40;
+}
+
+.user-infos .infos-left {
+  flex-grow: 1;
+  padding: 0 24px;
+}
+
+.user-infos p {
+  margin: 0;
+  line-height: 1.4;
+}
+
+.user-infos small {
+  color: #999999;
+  font-weight: bold;
+}
+
+.actions {
+  opacity: 0;
+  display: flex;
+  transition: ease .3s;
+}
+
+.user-infos:hover .actions {
+  opacity: 1;
+}
+
+.dashboard-game-card:hover .actions {
+  opacity: 1;
+}
+
+.actions a {
+  color: #999999;
+  margin-left: 16px;
+  font-size: 14px;
+}
+
+.actions a:hover {
+  color: #555555;
 }
 
