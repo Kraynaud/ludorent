@@ -22,13 +22,14 @@ game_1 = Game.new({
   description: "Armed with the astonishing ability to shrink in scale",
   price_per_day: 5,
   number_players: 4,
-  duration: 30,s
+  duration: 30,
   age_limit: 10,
   user_id: user.id
 })
-game_1.photo.attach(io: file_2, filename: 'uno.png', content_type: 'image/png')
+game_1.photo.attach(io: file_2, filename: 'uno1.png', content_type: 'image/png')
 game_1.save!
 
+file_3 = URI.open('https://www.claires.com/dw/image/v2/BBTK_PRD/on/demandware.static/-/Sites-master-catalog/default/dw1e4374e5/images/hi-res/65079_1.jpg?sw=734&sh=734&sm=fit')
 game_2 = Game.new({
   name: "Pixels",
   description: "Armed with the astonishing ability to shrink in scale",
@@ -38,9 +39,10 @@ game_2 = Game.new({
   age_limit: 15,
   user_id: user.id
 })
-game_2.photo.attach(io: file_2, filename: 'uno.png', content_type: 'image/png')
+game_2.photo.attach(io: file_3, filename: 'uno2.png', content_type: 'image/png')
 game_2.save!
 
+file_4 = URI.open('https://www.claires.com/dw/image/v2/BBTK_PRD/on/demandware.static/-/Sites-master-catalog/default/dw1e4374e5/images/hi-res/65079_1.jpg?sw=734&sh=734&sm=fit')
 game_3 = Game.new({
   name: "Terminator Genisys",
   description: "Armed with the astonishing ability to shrink in scale",
@@ -50,7 +52,7 @@ game_3 = Game.new({
   age_limit: 5,
   user_id: user.id
 })
-game_3.photo.attach(io: file_2, filename: 'uno.png', content_type: 'image/png')
+game_3.photo.attach(io: file_4, filename: 'uno3.png', content_type: 'image/png')
 game_3.save!
 
 # Game.new([{
