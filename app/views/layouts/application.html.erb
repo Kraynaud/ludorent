@@ -11,15 +11,16 @@
   </head>
   <body>
     <p class="notice"><%= notice %></p>
+  <!--  <p class="notice"><%= notice %></p> -->
+      <p class="alert"><%= alert %></p>
 
-    <%= render './devise/shared/navbar' %>
-    <%= render './devise/shared/flashes' %>
+      <%= render './devise/shared/navbar' %>
 
+     <div class="page"><%= yield %></div>
 
-    <%= yield %>
+      <%= render './devise/shared/flashes' %>
 
-  <%= render './devise/shared/footer' %>
-
+      <%= render './devise/shared/footer' %>
 
     <%= javascript_include_tag 'application' %>
 
