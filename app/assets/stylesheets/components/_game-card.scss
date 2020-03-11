@@ -6,7 +6,7 @@
 }
 
 .game-card:hover {
-  border : solid 2px green;
+  border : solid 2px white;
 }
 
 .game-card {
@@ -19,6 +19,14 @@
   height: 200px;
   width: 100%;
   object-fit: cover;
+}
+
+.game-card > img:hover {
+  filter: blur(1px);
+}
+
+.h1-rental {
+color: red;
 }
 
 .game-card h2 {

@@ -1,12 +1,12 @@
 <div class="container">
-<h1>Games for rental</h1>
+<h1 class="h1-rental">Games for rental</h1>
   <div class="games-container">
     <% @games.each do |game| %>
     <div class="game-card">
       <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
       <div class="game-card-infos">
         <div>
-          <h2><%= link_to game.name, game_path(game) %></h2>
+          <h2><%= link_to game.name, game_path(game), {:style=>'color:#EF629F;', :class => "css_class"} %></h2>
           <p><%= game.description %></p>
         </div>
         <h2 class="game-card-pricing"><%= game.price_per_day %>€</h2>

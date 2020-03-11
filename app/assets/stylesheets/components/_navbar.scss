@@ -24,11 +24,12 @@
   background: transparent;
   width: 100px;
   height: 40px;
-
   border: 2px solid #FFFFFF;
   border-radius: 5px;
 }
 
 .btn-nav:hover {
   opacity: 100%;
+  filter: blur(1px);
+  color: white;
 }
