@@ -34,9 +34,11 @@
         <h5><%= @game.price_per_day %> €/jour</h5>
       </div>
     </div>
-    <div class="btn-games mt-3">
-      <%= link_to "Louer", new_game_rental_path(@game), class: "mt-3" %>
-    </div>
+  </div>
+  <div class="new_rental_form">
+
+   <%= render 'form', rental: @rental %>
+
   </div>
 </div>
 
