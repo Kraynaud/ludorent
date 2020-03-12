@@ -33,7 +33,9 @@
           <% @my_games.each do |game| %>
 
           <div class="dashboard-game-card">
+            <% if game.photo.attached? %>
             <%= cl_image_tag game.photo.key, height: 300, width: 400, crop: :fill %>
+            <% end %>
             <div class="game-card-infos">
               <h2><%= link_to game.name, game_path(game) %></h2>
               <p><%= game.description %></p>
