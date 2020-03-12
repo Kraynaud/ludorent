@@ -29,7 +29,11 @@
         </div>
         <div class="d-flex align-item-center mt-3">
           <div>
-            <%= image_tag "uno.jpeg", alt: "Le Wagon", width: 50, :class => "avatar" %>
+            <% if @user.photo.attached? %>
+            <%= cl_image_tag @user.photo.key, class: "avatar", crop: :fill %>
+            <% else %>
+            <%= image_tag "avatardebase.png", class: "avatar", crop: :fill %>
+            <% end %>
           </div>
           <div>
             <h3><%= @user.first_name %> <%= @user.last_name %></h3>
@@ -40,9 +44,11 @@
         <h5><%= @game.price_per_day %> €/jour</h5>
       </div>
     </div>
+    <% if @game.user != current_user %>
     <div class="btn-home mt-3">
       <%= link_to "Louer", new_game_rental_path(@game), class: "mt-3" %>
     </div>
+    <% end %>
   </div>
 </div>
 

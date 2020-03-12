@@ -7,18 +7,21 @@ class RentalsController < ApplicationController
 
   def show
     @rental = Rental.find(params[:id])
+    authorize @rental # pundit authorization
     @game = @rental.game
     @user = @game.user
   end
 
   def new
     @game = Game.find(params[:game_id])
+    authorize @game # pundit authorization
     @user = @game.user
     @rental = Rental.new
   end
 
   def create
     @rental = Rental.new(rental_params)
+    authorize @rental # pundit authorization
     @game = Game.find(params[:game_id])
     @rental.user = current_user
     @rental.game = @game
@@ -31,7 +34,9 @@ class RentalsController < ApplicationController
   end
 
   def destroy
-    Rental.find(params[:id]).delete
+    @rental = Rental.find(params[:id])
+    authorize @rental # pundit authorization
+    @rental.delete
     redirect_to dashboard_path
   end
 

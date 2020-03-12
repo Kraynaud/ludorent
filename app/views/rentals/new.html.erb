@@ -27,7 +27,11 @@
         </div>
         <div class="d-flex align-item-center mt-3">
           <div>
-            <%= image_tag "uno.jpeg", alt: "Le Wagon", width: 50, :class => "avatar" %>
+            <% if @user.photo.attached? %>
+            <%= cl_image_tag @user.photo.key, class: "avatar", crop: :fill %>
+            <% else %>
+            <%= image_tag "avatardebase.png", class: "avatar", crop: :fill %>
+            <% end %>
           </div>
           <div>
             <h2><%= @game.user.first_name %> <%= @game.user.last_name %></h2>
@@ -39,12 +43,12 @@
       </div>
     </div>
   </div>
-  <h2>Sélectionner vos dates de location</h2>
-  <div class="new_rental_form">
-
-    <%= render 'form', rental: @rental %>
-
-  </div>
+  <% if @game.user != current_user %>
+    <h2>Sélectionner vos dates de location</h2>
+    <div class="new_rental_form">
+      <%= render 'form', rental: @rental %>
+    </div>
+  <% end %>
 
 </div>
 
