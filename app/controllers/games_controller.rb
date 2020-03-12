@@ -8,10 +8,12 @@ class GamesController < ApplicationController
   def show
     @game = Game.find(params[:id])
     @user = @game.user
+    authorize @game
   end
 
   def new
     @game = Game.new
+    authorize @game
   end
 
   def create
@@ -22,10 +24,12 @@ class GamesController < ApplicationController
     else
       render :new
     end
+    authorize @game
   end
 
   def edit
     @game = Game.find(params[:id])
+    authorize @game
   end
 
   def update
@@ -33,11 +37,13 @@ class GamesController < ApplicationController
     @game.update(game_params)
 
     redirect_to dashboard_path
+    authorize @game
   end
 
   def destroy
     Game.find(params[:id]).delete
     redirect_to dashboard_path
+    authorize @game
   end
 
   private
