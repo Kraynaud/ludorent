@@ -4,6 +4,14 @@ class GamesController < ApplicationController
   def index
     #@user = Game.user
     @games = Game.all
+    @markers = @games.map do |game|
+      {
+        lat: game.latitude,
+        lng: game.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { game: game }),
+        image_url: helpers.asset_url('avatardebase.png')
+      }
+    end
   end
 
   def show
@@ -47,3 +55,4 @@ class GamesController < ApplicationController
     params.require(:game).permit(:name, :description, :address, :age_limit, :duration, :number_players, :price_per_day, :photo)
   end
 end
+
