@@ -2,6 +2,7 @@ class GamesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
+    #@user = Game.user
     @games = Game.all
     @markers = @games.map do |game|
       {

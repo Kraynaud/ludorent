@@ -13,7 +13,6 @@ User.destroy_all
 
 file_1 = URI.open('https://avatars3.githubusercontent.com/u/58363552?s=460&v=4')
 user = User.new({first_name: "Kevin", last_name: "Raynaud", email: "myemal@ddedede.com", password: "ilikenobes" })
-user.photo.attach(io: file_1, filename: 'kevin.png', content_type: 'image/png')
 user.save!
 
 file_2 = URI.open('https://www.claires.com/dw/image/v2/BBTK_PRD/on/demandware.static/-/Sites-master-catalog/default/dw1e4374e5/images/hi-res/65079_1.jpg?sw=734&sh=734&sm=fit')

@@ -1,7 +1,5 @@
 .dashboard {
   h1 {
-    border-bottom: solid 1px grey;
-    margin: 40px 0px;
   }
 }
 
@@ -91,6 +89,7 @@
 .user-infos {
   display: flex;
   align-items: center;
+  margin-top: 40px;
   margin-bottom: 40px;
   background: white;
   padding: 8px 16px;
@@ -134,12 +133,13 @@
 }
 
 .actions a {
-  color: #999999;
+  font-family: 'ubuntu';
+  color: pink;
   margin-left: 16px;
   font-size: 14px;
 }
 
 .actions a:hover {
-  color: #555555;
+  color: pink;
 }
 
