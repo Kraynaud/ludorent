@@ -1,6 +1,7 @@
 <div class="container">
 <h1 class="h1-rental mt-4">Games for rental</h1>
 <h1 class="ligne"> </h1>
+<div class="main-container">
   <div class="games-container">
     <% @games.each do |game| %>
     <div class="game-card">
@@ -23,11 +24,12 @@
         <!-- <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="game-card-user avatar-bordered" /> -->
       </div>
     </div>
-
+    <% end %>
     </div>
     <div id="map"
       data-markers="<%= @markers.to_json %>"
       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
 
     </div>
+  </div>
 </div>
