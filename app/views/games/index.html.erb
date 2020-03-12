@@ -3,26 +3,28 @@
 <h1 class="ligne"> </h1>
   <div class="games-container">
     <% @games.each do |game| %>
-    <div class="game-card">
-      <% if game.photo.attached? %>
-      <%= cl_image_tag game.photo.key, height: 300, width: 400, crop: :fill %>
-      <% else %>
-      <%= image_tag "game-card.png", height: 300, width: 400, crop: :fill %>
-      <% end %>
-      <div class="game-card-infos">
-        <div>
-          <h2><%= link_to game.name, game_path(game), {:style=>'color:#EF629F;', :class => "css_class"} %></h2>
-          <p><%= game.description %></p>
+      <% if game.user != current_user %>
+        <div class="game-card">
+          <% if game.photo.attached? %>
+          <%= cl_image_tag game.photo.key, height: 300, width: 400, crop: :fill %>
+          <% else %>
+          <%= image_tag "game-card.png", height: 300, width: 400, crop: :fill %>
+          <% end %>
+          <div class="game-card-infos">
+            <div>
+              <h2><%= link_to game.name, game_path(game), {:style=>'color:#EF629F;', :class => "css_class"} %></h2>
+              <p><%= game.description %></p>
+            </div>
+            <h2 class="game-card-pricing"><%= game.price_per_day %>€</h2>
+            <% if game.user.photo.attached? %>
+            <%= cl_image_tag game.user.photo.key, class: "game-card-user avatar-bordered" %>
+            <% else %>
+            <%= image_tag "avatardebase.png", class: "game-card-user avatar-bordered" %>
+            <% end %>
+            <!-- <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="game-card-user avatar-bordered" /> -->
+          </div>
         </div>
-        <h2 class="game-card-pricing"><%= game.price_per_day %>€</h2>
-        <% if game.user.photo.attached? %>
-        <%= cl_image_tag game.user.photo.key, class: "game-card-user avatar-bordered" %>
-        <% else %>
-        <%= image_tag "avatardebase.png", class: "game-card-user avatar-bordered" %>
-        <% end %>
-        <!-- <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="game-card-user avatar-bordered" /> -->
-      </div>
-    </div>
+       <% end %>
     <% end %>
   </div>
 </div>
