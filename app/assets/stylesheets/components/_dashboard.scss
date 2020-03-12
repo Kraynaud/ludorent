@@ -3,6 +3,8 @@
   }
 }
 
+// ******************game card**********************************
+
 .dashboard-game-card {
   overflow: hidden;
   height: 120px;
@@ -36,6 +38,53 @@
 .dashboard-game-card .game-card-infos {
   padding: 16px;
 }
+
+.dashboard-game-card:hover .actions {
+  opacity: 1;
+}
+
+
+// ******************rental card**********************************
+
+.dashboard-rental-card {
+  overflow: hidden;
+  height: 120px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.dashboard-rental-card img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+}
+
+.dashboard-rental-card h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.dashboard-rental-card p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.dashboard-rental-card .rental-card-infos {
+  padding: 16px;
+}
+
+.dashboard-rental-card:hover .actions {
+  opacity: 1;
+}
+
+// ******************user card**********************************
 
 .user-infos {
   display: flex;
@@ -80,10 +129,6 @@
 }
 
 .user-infos:hover .actions {
-  opacity: 1;
-}
-
-.dashboard-game-card:hover .actions {
   opacity: 1;
 }
 
