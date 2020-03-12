@@ -7,43 +7,45 @@ class GamesController < ApplicationController
 
   def show
     @game = Game.find(params[:id])
+    authorize @game # pundit authorization
     @user = @game.user
-    authorize @game
   end
 
   def new
     @game = Game.new
-    authorize @game
+    authorize @game # pundit authorization
   end
 
   def create
     @game = Game.new(game_params)
+    authorize @game # pundit authorization
     @game.user = current_user
     if @game.save
       redirect_to dashboard_path
     else
       render :new
     end
-    authorize @game
   end
 
   def edit
     @game = Game.find(params[:id])
-    authorize @game
+    authorize @game # pundit authorization
   end
 
   def update
     @game = Game.find(params[:id])
+    authorize @game # pundit authorization
     @game.update(game_params)
 
     redirect_to dashboard_path
-    authorize @game
   end
 
   def destroy
-    Game.find(params[:id]).delete
+    @game = Game.find(params[:id])
+    authorize @game # pundit authorization
+    @game.delete
+
     redirect_to dashboard_path
-    authorize @game
   end
 
   private
