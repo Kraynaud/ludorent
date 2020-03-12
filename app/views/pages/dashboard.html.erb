@@ -49,12 +49,20 @@
         </div>
 
         <div class="tab-pane fade" id="rentals" role="tabpanel" aria-labelledby="rentals-tab">
+          <% @my_rentals.each do |rental| %>
 
+          <div class="dashboard-rental-card">
+            <%= cl_image_tag game.photo.key, height: 300, width: 400, crop: :fill %>
+            <div class="rental-card-infos">
+              <h2><%= link_to rental.game.name, rental_path(rental) %></h2>
+              <p>Rented from <%= rental.start_date %> to <%= rental.end_date %></p>
+              <p><%= rental.total_price %> €/day</p>
+            </div>
+          </div>
+          <% end %>
 
         </div>
-
       </div>
-
     </div>
   </div>
 </div>
