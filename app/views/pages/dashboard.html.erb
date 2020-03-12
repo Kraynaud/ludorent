@@ -3,7 +3,11 @@
     <h1 class="h1-rental mt-4">Dashboard</h1>
     <h1 class="ligne"> </h1>
     <div class="user-infos">
-    <img src="https://kitt.lewagon.com/placeholder/users/Kraynaud" class="gradient" >
+      <% if @user.photo.attached? %>
+      <%= cl_image_tag @user.photo.key, class: "gradient", crop: :fill %>
+      <% else %>
+      <%= image_tag "avatardebase.png", class: "gradient", crop: :fill %>
+      <% end %>
       <div class="infos-left">
         <h2><%= @user.first_name %> <%= @user.last_name %></h2>
         <p>Games : <%= @my_games.length %></p>
@@ -35,6 +39,8 @@
           <div class="dashboard-game-card">
             <% if game.photo.attached? %>
             <%= cl_image_tag game.photo.key, height: 300, width: 400, crop: :fill %>
+            <% else %>
+            <%= image_tag "game-card.png", height: 300, width: 400, crop: :fill %>
             <% end %>
             <div class="game-card-infos">
               <h2><%= link_to game.name, game_path(game) %></h2>
@@ -54,7 +60,11 @@
           <% @my_rentals.each do |rental| %>
 
           <div class="dashboard-rental-card">
+            <% if rental.game.photo.attached? %>
             <%= cl_image_tag rental.game.photo.key, height: 300, width: 400, crop: :fill %>
+            <% else %>
+            <%= image_tag "game-card.png", height: 300, width: 400, crop: :fill %>
+            <% end %>
             <div class="rental-card-infos">
               <h2><%= link_to rental.game.name, rental_path(rental) %></h2>
               <p>Rented from <%= rental.start_date %> to <%= rental.end_date %></p>

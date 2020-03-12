@@ -1,7 +1,11 @@
 <div class="container">
   <div class="d-flex justify-content-around border mt-3 p-3 mb-3 bg-white">
     <div>
-      <%= cl_image_tag @game.photo.key, height: 300, width: 400, crop: :fill %>
+      <% if game.photo.attached? %>
+      <%= cl_image_tag game.photo.key, height: 300, width: 400, crop: :fill %>
+      <% else %>
+      <%= image_tag "game-card.png ", height: 300, width: 400, crop: :fill %>
+      <% end %>
     </div>
     <div>
       <ul>
