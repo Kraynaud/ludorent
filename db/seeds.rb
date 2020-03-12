@@ -23,6 +23,7 @@ game_1 = Game.new({
   number_players: 4,
   duration: 30,
   age_limit: 10,
+  address: "167 rue paradis 13008 Marseille",
   user_id: user.id
 })
 game_1.photo.attach(io: file_2, filename: 'uno1.png', content_type: 'image/png')
@@ -36,6 +37,7 @@ game_2 = Game.new({
   number_players: 8,
   duration: 45,
   age_limit: 15,
+  address: "22 Rue du Débarcadère 75017 Paris",
   user_id: user.id
 })
 game_2.photo.attach(io: file_3, filename: 'uno2.png', content_type: 'image/png')
@@ -49,6 +51,7 @@ game_3 = Game.new({
   number_players: 2,
   duration: 15,
   age_limit: 5,
+  address: "41 Quai de Pierre-Scize, 69009 Lyon",
   user_id: user.id
 })
 game_3.photo.attach(io: file_4, filename: 'uno3.png', content_type: 'image/png')
