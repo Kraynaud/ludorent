@@ -33,7 +33,9 @@
           <% @my_games.each do |game| %>
 
           <div class="dashboard-game-card">
+            <% if game.photo.attached? %>
             <%= cl_image_tag game.photo.key, height: 300, width: 400, crop: :fill %>
+            <% end %>
             <div class="game-card-infos">
               <h2><%= link_to game.name, game_path(game) %></h2>
               <p><%= game.description %></p>
@@ -49,12 +51,23 @@
         </div>
 
         <div class="tab-pane fade" id="rentals" role="tabpanel" aria-labelledby="rentals-tab">
+          <% @my_rentals.each do |rental| %>
 
+          <div class="dashboard-rental-card">
+            <%= cl_image_tag rental.game.photo.key, height: 300, width: 400, crop: :fill %>
+            <div class="rental-card-infos">
+              <h2><%= link_to rental.game.name, rental_path(rental) %></h2>
+              <p>Rented from <%= rental.start_date %> to <%= rental.end_date %></p>
+              <p>Total price : <%= rental.total_price %> €</p>
+            </div>
+            <div class="actions">
+              <%= link_to 'Delete rental', rental_path(rental), method: :delete, data: { confirm: "Are you sure ?"} %> <i class="far fa-trash-alt"></i>
+            </div>
+          </div>
+          <% end %>
 
         </div>
-
       </div>
-
     </div>
   </div>
 </div>
