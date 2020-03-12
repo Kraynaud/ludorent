@@ -54,11 +54,14 @@
           <% @my_rentals.each do |rental| %>
 
           <div class="dashboard-rental-card">
-            <%= cl_image_tag game.photo.key, height: 300, width: 400, crop: :fill %>
+            <%= cl_image_tag rental.game.photo.key, height: 300, width: 400, crop: :fill %>
             <div class="rental-card-infos">
               <h2><%= link_to rental.game.name, rental_path(rental) %></h2>
               <p>Rented from <%= rental.start_date %> to <%= rental.end_date %></p>
-              <p><%= rental.total_price %> €/day</p>
+              <p>Total price : <%= rental.total_price %> €</p>
+            </div>
+            <div class="actions">
+              <%= link_to 'Delete rental', rental_path(rental), method: :delete, data: { confirm: "Are you sure ?"} %> <i class="far fa-trash-alt"></i>
             </div>
           </div>
           <% end %>
