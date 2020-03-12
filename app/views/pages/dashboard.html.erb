@@ -1,7 +1,7 @@
 <div class="container">
   <div class="dashboard">
-    <h1>Tableau de bord</h1>
-
+    <h1 class="h1-rental mt-4">Dashboard</h1>
+    <h1 class="ligne"> </h1>
     <div class="user-infos">
     <img src="https://kitt.lewagon.com/placeholder/users/Kraynaud" class="gradient" >
       <div class="infos-left">
@@ -47,7 +47,7 @@
             </div>
           </div>
           <% end %>
-          <%= link_to 'Create new game +', new_game_path %>
+          <div class="links"><%= link_to 'Create new game +', new_game_path %></div>
         </div>
 
         <div class="tab-pane fade" id="rentals" role="tabpanel" aria-labelledby="rentals-tab">
