@@ -18,6 +18,7 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 gem 'geocoder'
+gem 'pg_search', '~> 2.3.0'
 
 gem 'cloudinary', '~> 1.12.0'
 

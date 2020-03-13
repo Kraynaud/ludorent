@@ -3,6 +3,9 @@ class GamesController < ApplicationController
 
   def index
     @games = policy_scope(Game)
+    if params[:query].present?
+      @games = @games.where(name: params[:query])
+    end
 
     # @user = Game.user
     # @games = Game.all
