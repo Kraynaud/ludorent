@@ -9,7 +9,11 @@
       <%= image_tag "avatardebase.png", class: "gradient", crop: :fill %>
       <% end %>
       <div class="infos-left">
-        <h2><%= @user.first_name %> <%= @user.last_name %></h2>
+        <% if @user.first_name.blank? && @user.last_name.blank? %>
+          <h2 class="text-left">Unknown</h2>
+        <% else %>
+          <h2 class="text-left"><%= @user.first_name %> <%= @user.last_name %></h2>
+        <% end %>
         <p>Games : <%= @my_games.length %></p>
         <p>Rentals : <%= @my_rentals.length %></p>
       </div>

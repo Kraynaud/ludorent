@@ -1,3 +1,7 @@
 <p><strong>Rating :</strong> <%= review.rating %></p>
 <p><strong>Content :</strong> <%= review.content %></p>
-<p><strong>From :</strong> <%= review.user.first_name %> <%= review.user.last_name %></p>
+<% if review.user.first_name.blank? && review.user.last_name.blank? %>
+  <p><strong>From :</strong> unknown</p>
+<% else %>
+  <p><strong>From :</strong> <%= review.user.first_name %> <%= review.user.last_name %></p>
+<% end %>
