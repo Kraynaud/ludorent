@@ -34,8 +34,12 @@
   text-decoration: none;
 }
 
-.form-control{
-  // width:500px;
-  padding:0px 150px;
+.btn-search-all:hover {
+  text-decoration: none;
+  color: #fff;
 }
 
+.form-control{
+  // width:500px;
+  padding-right: 150px;
+}

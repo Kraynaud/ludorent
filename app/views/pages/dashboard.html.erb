@@ -43,7 +43,7 @@
             <%= image_tag "game-card.png", height: 300, width: 400, crop: :fill %>
             <% end %>
             <div class="game-card-infos">
-              <h2><%= link_to game.name, game_path(game) %></h2>
+              <h2><%= link_to game.name, game_path(game), class: "text-decoration-none" %></h2>
               <p><%= game.description %></p>
               <p><%= game.price_per_day %> €/day</p>
             </div>
@@ -66,7 +66,7 @@
             <%= image_tag "game-card.png", height: 300, width: 400, crop: :fill %>
             <% end %>
             <div class="rental-card-infos">
-              <h2><%= link_to rental.game.name, rental_path(rental) %></h2>
+              <h2><%= link_to rental.game.name, rental_path(rental), class: "text-decoration-none" %></h2>
               <p>Rented from <%= rental.start_date %> to <%= rental.end_date %></p>
               <p>Total price : <%= rental.total_price %> €</p>
             </div>

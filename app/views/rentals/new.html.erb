@@ -43,12 +43,13 @@
       </div>
     </div>
   </div>
-  <% if @game.user != current_user %>
-    <h2>Sélectionner vos dates de location</h2>
-    <div class="new_rental_form">
-      <%= render 'form', rental: @rental %>
-    </div>
-  <% end %>
-
+  <div class="border bg-white mb-5 mt-3 p-3">
+    <% if @game.user != current_user %>
+      <h2>Sélectionnez vos dates de location</h2>
+      <div class="new_rental_form">
+        <%= render 'form', rental: @rental %>
+      </div>
+    <% end %>
+  </div>
 </div>
 
