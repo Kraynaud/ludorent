@@ -48,7 +48,7 @@
     </div>
     <% if @game.user != current_user %>
     <div class="btn-home mt-3">
-      <%= link_to "Louer", new_game_rental_path(@game), class: "mt-3" %>
+      <%= link_to "Louer", new_game_rental_path(@game) %>
     </div>
     <% end %>
     <div id="reviews" class="mt-4 border bg-white p-3">
@@ -59,7 +59,16 @@
         <p>Be the first to leave a review for <%= @game.name %></p>
       <% else %>
         <% @game.reviews.each do |review| %>
-          <%= render 'reviews/show', review: review %>
+          <div class="border p-3 mb-1 d-flex justify-content-between">
+            <div>
+              <%= render 'reviews/show', review: review %>
+            </div>
+            <div class="review-card">
+              <div class="actions">
+                <%= link_to 'Delete review', review_path(review), method: :delete, data: { confirm: "Are you sure ?"} %> <i class="far fa-trash-alt"></i>
+              </div>
+            </div>
+          </div>
         <% end %>
       <% end %>
     </div>
