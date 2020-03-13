@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
   resources :games do
     resources :rentals, only: [ :new, :create ]
+    resources :reviews, only: [ :new, :create ]
   end
   resources :rentals, only: [ :index, :show, :destroy ]
+  resources :reviews, only: [ :destroy ]
   devise_for :users
   root to: 'pages#home'
   get 'dashboard', to: 'pages#dashboard'
