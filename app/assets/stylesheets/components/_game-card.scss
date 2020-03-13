@@ -1,8 +1,13 @@
+.index-container{
+  padding: 25px 40px;
+}
+
 .games-container {
   margin-top: 40px;
+  margin-right: 15px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 20px;
+  grid-gap: 15px;
   flex-grow: 1;
 }
 
@@ -15,6 +20,8 @@
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   justify-text: left;
+  height: 300px;
+  width: auto;
 }
 
 .game-card > img {
