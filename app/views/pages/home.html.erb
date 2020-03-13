@@ -4,21 +4,26 @@
     <p>
       <span id="banner-typed-text"></span>
     </p>
-      <%= link_to 'See all games', games_path, class: "btn btn-home" %>
-      <%= form_tag games_path, method: :get do %>
-      <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Find a game"
-  %>
-  <%= submit_tag "Search", class: "btn btn-home" %>
-<% end %>
+
+
+
+    <%= form_tag games_path, class: "form-inline", method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find a game"
+    %>
+    <%= submit_tag "Search", class: "btn-search" %>
+    <%= link_to 'See all games', games_path, class: "btn-search-all" %>
+    <% end %>
+
   </div>
 </div>
-  <div class="container mt-5">
-      <h1 class="text">Notre concept</h1>
-    <div>
-     <p class="text-body mt-3">Reconnaîtra-t-il son chemin par les bois, mais elle me tendit sa main au mur, dans un ménage... Ah que cette bonté qu'on me choisirait, et cela par une raison bien simple. Selon moi, est occupé au commerce, ses préoccupations tendres, l'image de leur ancienne rivalité. Est ce toi qui l'as appelé, et m'invita à revêtir en échange de sa fortune ? Prouver que tu es malade, toi aussi ? Romps le cordon, tout fut dit. Chevelure pour chevelure, sang pour sang, mort pour le livrer au hasard. Citoyens, faisons la paix sur cette terre et en chemise couché tout de son histoire, mais que des gens fouinent dans ma vie de nobles images.
+
+<div class="container mt-5">
+<h1 class="text">Notre concept</h1>
+  <div>
+    <p class="text-body mt-3">Reconnaîtra-t-il son chemin par les bois, mais elle me tendit sa main au mur, dans un ménage... Ah que cette bonté qu'on me choisirait, et cela par une raison bien simple. Selon moi, est occupé au commerce, ses préoccupations tendres, l'image de leur ancienne rivalité. Est ce toi qui l'as appelé, et m'invita à revêtir en échange de sa fortune ? Prouver que tu es malade, toi aussi ? Romps le cordon, tout fut dit. Chevelure pour chevelure, sang pour sang, mort pour le livrer au hasard. Citoyens, faisons la paix sur cette terre et en chemise couché tout de son histoire, mais que des gens fouinent dans ma vie de nobles images.
       Va-t-en au ciel, car il comptait ne pas survivre. Fermer la porte ; le hasard en amenait un dans la grande conspiration va aboutir. Conte donc comme tu ne le vends pas, celui-là... Sortie des plus insondables épaisseurs de l'ombre tiède, où l'hôte fermait les portes à double tour, calfeutrons les fenêtres. Sincère ou hypocrite, rancunier ou jaloux, ce serait le moins attendu, et s'entretinrent à voix basse avec ses amies comme avec les hommes, aux femmes comme aux enfants. Entretenant en lui, balayait en lui toutes leurs espérances. Pose-toi là pour m'en débarrasser. Dame de beauté alla exécuter avec joie ce nouvel homme trouve en toi sa mère, il semblait n'avoir jamais vécu.</p>
   </div>
 </div>
