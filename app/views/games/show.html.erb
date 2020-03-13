@@ -48,11 +48,14 @@
     </div>
     <% if @game.user != current_user %>
     <div class="btn-home mt-3">
-      <%= link_to "Louer", new_game_rental_path(@game) %>
+      <%= link_to "Louer", new_game_rental_path(@game), class: "rent" %>
     </div>
     <% end %>
     <div id="reviews" class="mt-4 border bg-white p-3">
       <% if @game.user != current_user %>
+      <div class="text-center">
+        <h2>Add a review</h2>
+      </div>
         <%= render 'reviews/form', game: @game, review: @review %>
       <% end %>
     </div>
