@@ -52,7 +52,9 @@
     </div>
     <% end %>
     <div id="reviews" class="mt-4 border bg-white p-3">
+      <% if @game.user != current_user %>
         <%= render 'reviews/form', game: @game, review: @review %>
+      <% end %>
     </div>
     <div class="mt-4 border bg-white p-3 mb-5">
       <% if @game.reviews.blank? %>
