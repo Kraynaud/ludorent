@@ -20,6 +20,7 @@ class GamesController < ApplicationController
     @game = Game.find(params[:id])
     authorize @game # pundit authorization
     @user = @game.user
+    @review = Review.new
   end
 
   def new
