@@ -11,7 +11,8 @@ puts 'Destroy all database of Users and Games...'
 Game.destroy_all
 User.destroy_all
 
-puts 'Creating one user...'
+puts 'Creating some users...'
+
 
 file_1 = URI.open('https://img.static-rmg.be/a/view/q100/w/h450/1570130/zorro.jpg')
 file_2 = URI.open('https://vignette.wikia.nocookie.net/librerte/images/4/44/1200x630bb.jpg/revision/latest?cb=20190904083842&path-prefix=fr')
@@ -28,6 +29,8 @@ user2.save!
 user3 = User.new({first_name: "Theo", last_name: "Bondz", email: "theob@gmail.com", password: "azdazdazd" })
 user3.photo.attach(io: file_3, filename: 'theo.png', content_type: 'image/png')
 user3.save!
+
+puts "#{User.count} users have been created !"
 
 puts 'Creating some games...'
 
