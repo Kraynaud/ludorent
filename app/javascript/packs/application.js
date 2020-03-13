@@ -8,5 +8,7 @@ import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 
 import { loadDynamicBannerText } from '../components/banner';
 
+import { initAutocomplete } from '../plugins/init_autocomplete';
+
 initMapbox();
 loadDynamicBannerText();
