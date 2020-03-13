@@ -7,13 +7,17 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require "open-uri"
 
+puts 'Destroy all database of Users and Games...'
 Game.destroy_all
-
 User.destroy_all
+
+puts 'Creating one user...'
 
 file_1 = URI.open('https://avatars3.githubusercontent.com/u/58363552?s=460&v=4')
 user = User.new({first_name: "Kevin", last_name: "Raynaud", email: "myemal@ddedede.com", password: "ilikenobes" })
 user.save!
+
+puts 'Creating some games...'
 
 file_2 = URI.open('https://www.claires.com/dw/image/v2/BBTK_PRD/on/demandware.static/-/Sites-master-catalog/default/dw1e4374e5/images/hi-res/65079_1.jpg?sw=734&sh=734&sm=fit')
 game_1 = Game.new({
@@ -57,6 +61,8 @@ game_3 = Game.new({
 game_3.photo.attach(io: file_4, filename: 'uno3.png', content_type: 'image/png')
 game_3.save!
 
+puts "#{Game.count} games have been created !"
+
 # Game.new([{
 #   name: "Ant-Man",
 #   description: "Armed with the astonishing ability to shrink in scale",
@@ -84,5 +90,3 @@ game_3.save!
 #   age_limit: 5,
 #   user_id: user.id
 # }])
-
-puts "3 games created"
